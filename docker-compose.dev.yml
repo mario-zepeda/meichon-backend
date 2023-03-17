@@ -15,7 +15,7 @@ services:
     container_name: core_app
     build: .
     restart: always
-    env_file: api/.env.docker
+    env_file: .env.docker
     ports:
       - "8080:8080"
     command: >
@@ -29,7 +29,7 @@ services:
   db:
     container_name: core_db
     image: postgres:12.0-alpine
-    env_file: api/.env.docker
+    env_file: .env.docker
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
